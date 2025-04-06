@@ -8,39 +8,94 @@
 <body>
     <script>
         
-        let ComputerChoice = getComputerChoice()
+        const computerChoice = getComputerChoice();
+        const humanChoice =  getHumanChoice();
         let Choice = "none"
+        let humanScore = 0
+        let computerScore = 0
+        let scores = ("Your Score" + " " + humanScore + "," + "Computer Score" + " " + computerScore) 
+
         /* when calling getComputerChoice return Rock, Paper, or Scissors 
             somehow use math.random to pick one of the three choices.
-
-        
-        
-        
-        
-        
         */
+        function playGame() {
+            playRound(humanChoice, computerChoice);
+        }
+       function playRound() {
+            getComputerChoice;
+            getHumanChoice;
+            /*player scissors */
+                if (humanChoice == "scissors" && Choice == "Rock") {
+                    console.log("You lose! Rock smashes Scissors!")
+                    computerScore = computerScore + 1;
+                }
+                if (humanChoice == "scissors" && Choice == "Scissors") {
+                    console.log("Tie!")
+                }
+                if (humanChoice == "scissors" && Choice == "Paper") {
+                    console.log("You win! Scissors cuts Paper!")
+                    humanScore = humanScore + 1;
+                }
+            /*player rock */
+                if (humanChoice == "rock" && Choice == "Rock") {
+                    console.log("Tie!")
+                    
+                }
+                if (humanChoice == "rock" && Choice == "Scissors") {
+                    console.log("You win! Rock smashes Scissors!")
+                    humanScore = humanScore + 1;
+                }
+                if (humanChoice == "rock" && Choice == "Paper") {
+                    console.log("You lose! Paper covers Rock!")
+                    computerScore = computerScore + 1;
+                }
+
+            /*player paper */
+                if (humanChoice == "paper" && Choice == "Rock") {
+                    console.log("You win! Paper covers Rock!")
+                    humanScore = humanScore + 1;
+                }
+                if (humanChoice == "paper" && Choice == "Paper") {
+                    console.log("Tie!")
+                }
+                if (humanChoice == "paper" && Choice == "Scissors") {
+                    console.log("You lose! Scissors cuts Paper!")
+                    computerScore = computerScore + 1;
+                }
+                 
+                
+
+       }
 
         function getComputerChoice(Choice) {
             return Math.random();
         }
-        if (ComputerChoice <= .33) {
+        if (computerChoice <= .33) {
             Choice = "Rock";
         }
-        if (ComputerChoice <= 1 && ComputerChoice >= .66) {
+        if (computerChoice <= 1 && computerChoice >= .66) {
             Choice = "Paper";
         }
-        if (ComputerChoice > .33 && ComputerChoice < .66) {
+        if (computerChoice > .33 && computerChoice < .66) {
             Choice = "Scissors";
         }
         console.log(Choice);
 
-        function getHumanChoice(Hand) {
-            console.log(Hand);
+        function getHumanChoice() {
+            return prompt("Choose your hand");
         
 
         }  
+        console.log(humanChoice);
+        
 
-        getHumanChoice = prompt("Choose your hand");
+        playGame();
+        
+        console.log(scores);
+
+
+
+        /*getHumanChoice = prompt("Choose your hand"); */
     
 
 
