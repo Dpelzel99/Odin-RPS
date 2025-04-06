@@ -8,20 +8,26 @@
 <body>
     <script>
         
-        const computerChoice = getComputerChoice();
-        const humanChoice =  getHumanChoice();
+        let computerChoice = getComputerChoice();
+        let humanChoice =  getHumanChoice();
         let Choice = "none"
-        let humanScore = 0
-        let computerScore = 0
-        let scores = ("Your Score" + " " + humanScore + "," + "Computer Score" + " " + computerScore) 
+        
+        
 
         /* when calling getComputerChoice return Rock, Paper, or Scissors 
             somehow use math.random to pick one of the three choices.
         */
         function playGame() {
-            playRound(humanChoice, computerChoice);
-        }
-       function playRound() {
+            let round = 0
+            let humanScore = 0
+            let computerScore = 0
+
+
+
+            
+
+            function playRound() {
+            /*let scores = ("Your Score" + " " + humanScore + "," + "Computer Score" + " " + computerScore)*/ 
             getComputerChoice;
             getHumanChoice;
             /*player scissors */
@@ -63,9 +69,23 @@
                     computerScore = computerScore + 1;
                 }
                  
-                
-
-       }
+            console.log("Your Score:" + humanScore)
+            console.log("Computer Score:" + computerScore)
+            round = round + 1;
+            getComputerChoice;
+            getHumanChoice;
+            console.log("Round:" + round)
+             }
+            playRound(humanChoice, computerChoice)
+            newRound;
+            function newRound() {
+                console.log("rounddddddd")
+                getComputerChoice;
+                getHumanChoice;
+                playRound(humanChoice, computerChoice);
+            }
+        }
+       
 
         function getComputerChoice(Choice) {
             return Math.random();
@@ -79,25 +99,17 @@
         if (computerChoice > .33 && computerChoice < .66) {
             Choice = "Scissors";
         }
-        console.log(Choice);
+        console.log("Computer Choice:" + Choice);
 
         function getHumanChoice() {
             return prompt("Choose your hand");
         
 
         }  
-        console.log(humanChoice);
+        console.log("Your Choice:" + humanChoice);
         
 
         playGame();
-        
-        console.log(scores);
-
-
-
-        /*getHumanChoice = prompt("Choose your hand"); */
-    
-
 
     </script>
     
