@@ -8,9 +8,7 @@
 <body>
     <script>
         
-        let computerChoice = getComputerChoice();
-        let humanChoice =  getHumanChoice();
-        let Choice = "none"
+        
         
         
 
@@ -21,94 +19,78 @@
             let round = 0
             let humanScore = 0
             let computerScore = 0
-
-
-
             
 
-            function playRound() {
-            /*let scores = ("Your Score" + " " + humanScore + "," + "Computer Score" + " " + computerScore)*/ 
-            getComputerChoice;
-            getHumanChoice;
-            /*player scissors */
-                if (humanChoice == "scissors" && Choice == "Rock") {
-                    console.log("You lose! Rock smashes Scissors!")
-                    computerScore = computerScore + 1;
-                }
-                if (humanChoice == "scissors" && Choice == "Scissors") {
-                    console.log("Tie!")
-                }
-                if (humanChoice == "scissors" && Choice == "Paper") {
-                    console.log("You win! Scissors cuts Paper!")
-                    humanScore = humanScore + 1;
-                }
-            /*player rock */
-                if (humanChoice == "rock" && Choice == "Rock") {
-                    console.log("Tie!")
-                    
-                }
-                if (humanChoice == "rock" && Choice == "Scissors") {
-                    console.log("You win! Rock smashes Scissors!")
-                    humanScore = humanScore + 1;
-                }
-                if (humanChoice == "rock" && Choice == "Paper") {
-                    console.log("You lose! Paper covers Rock!")
-                    computerScore = computerScore + 1;
-                }
-
-            /*player paper */
-                if (humanChoice == "paper" && Choice == "Rock") {
-                    console.log("You win! Paper covers Rock!")
-                    humanScore = humanScore + 1;
-                }
-                if (humanChoice == "paper" && Choice == "Paper") {
-                    console.log("Tie!")
-                }
-                if (humanChoice == "paper" && Choice == "Scissors") {
-                    console.log("You lose! Scissors cuts Paper!")
-                    computerScore = computerScore + 1;
-                }
-                 
-            console.log("Your Score:" + humanScore)
-            console.log("Computer Score:" + computerScore)
-            round = round + 1;
-            getComputerChoice;
-            getHumanChoice;
-            console.log("Round:" + round)
-             }
-            playRound(humanChoice, computerChoice)
-            newRound;
-            function newRound() {
-                console.log("rounddddddd")
-                getComputerChoice;
-                getHumanChoice;
-                playRound(humanChoice, computerChoice);
+            for (let i = 0; i < 5; i++) {
+                let humanChoice = prompt("Chose your hand").toLowerCase();
+                let computer = getComputerChoice();
+                getComputerChoice();
+                console.log("Computer Choice:" + computer);
+                console.log("Your Choice:" + humanChoice);
+                playRound(humanChoice, computer);
+                
             }
-        }
-       
 
-        function getComputerChoice(Choice) {
-            return Math.random();
-        }
+        function getComputerChoice() {
+            let computerChoice = Math.random();
+            let Choice = "none"
         if (computerChoice <= .33) {
-            Choice = "Rock";
+            Choice = "Rock";           
         }
         if (computerChoice <= 1 && computerChoice >= .66) {
             Choice = "Paper";
         }
         if (computerChoice > .33 && computerChoice < .66) {
-            Choice = "Scissors";
+            Choice = "Scissors";           
         }
-        console.log("Computer Choice:" + Choice);
-
-        function getHumanChoice() {
-            return prompt("Choose your hand");
+            return Choice
+        }
+        
         
 
-        }  
-        console.log("Your Choice:" + humanChoice);
-        
-
+            function playRound(humanChoice, computer) {
+            /*player scissors */
+                if (humanChoice == "scissors" && computer == "Rock") {
+                    console.log("You lose! Rock smashes Scissors!")
+                    computerScore = computerScore + 1;
+                }
+                if (humanChoice == "scissors" && computer == "Scissors") {
+                    console.log("Tie!")
+                }
+                if (humanChoice == "scissors" && computer == "Paper") {
+                    console.log("You win! Scissors cuts Paper!")
+                    humanScore = humanScore + 1;
+                }
+            /*player rock */
+                if (humanChoice == "rock" && computer == "Rock") {
+                    console.log("Tie!")  
+                }
+                if (humanChoice == "rock" && computer == "Scissors") {
+                    console.log("You win! Rock smashes Scissors!")
+                    humanScore = humanScore + 1;
+                }
+                if (humanChoice == "rock" && computer == "Paper") {
+                    console.log("You lose! Paper covers Rock!")
+                    computerScore = computerScore + 1;
+                }
+            /*player paper */
+                if (humanChoice == "paper" && computer == "Rock") {
+                    console.log("You win! Paper covers Rock!")
+                    humanScore = humanScore + 1;
+                }
+                if (humanChoice == "paper" && computer == "Paper") {
+                    console.log("Tie!")
+                }
+                if (humanChoice == "paper" && computer == "Scissors") {
+                    console.log("You lose! Scissors cuts Paper!")
+                    computerScore = computerScore + 1;
+                } 
+            console.log("Your Score:" + humanScore)
+            console.log("Computer Score:" + computerScore)
+            round = round + 1;
+            console.log("Round:" + round)
+            } 
+        }
         playGame();
 
     </script>
